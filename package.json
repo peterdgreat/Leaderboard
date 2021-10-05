@@ -2,7 +2,6 @@
   "name": "leaderboard",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "hint": "^6.1.4",
     "stylelint": "^13.13.1",
@@ -14,10 +13,21 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.24.2"
+    "eslint-plugin-import": "^2.24.2",
+    "css-loader": "^6.3.0",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-middleware": "^5.1.0",
+    "webpack-dev-server": "^4.2.1"
   },
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
