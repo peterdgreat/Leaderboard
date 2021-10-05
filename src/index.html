@@ -11,7 +11,64 @@
     <title>Leaderboard </title>
 </head>
 <body>
+<header>
+    <h1>Leaderboard</h1>
+</header>
+<div class="container">
+    <div class="row">
+        <section class="col-md-6">
+           <div class="d-flex justify-content-around">
+            <h3>
+                Recent Scores
+            </h3>
+            <button>Refresh</button>
+           </div>
+           <div class="main mt-5">
+            <ul class="list-unstyled">
+                <li>
+                <h4>Name</h4>
+                <h4>100</h4>
+                </li>
+                <li>
+                    <h4>Name</h4>
+                    <h4>20</h4>
+                </li>
+                <li>
+                    <h4>Name</h4>
+                    <h4>50</h4>
+                </li>
+                <li>
+                    <h4>Name</h4>
+                    <h4>100</h4>
+                </li>
+                <li>
+                    <h4>Name</h4>
+                    <h4>100</h4>
+                </li>
+            </ul>
+        </div>
+        </section>
+        <section class="col-md-6">
+            <div class="d-flex flex-column">
+                <h3>Add your score</h3>
+      
+                <form class="mt-5"> 
+                    <div class="mb-3 inpt">
+                      <input type="text"  placeholder="Your name">
+                    </div>
+                    <div class="mb-3 inpt">
+                        <input type="number" placeholder="Your score">
+                      </div>
+                      <div class="d-flex col-12 justify-content-end">
+                        <button type="submit" >Submit</button>
+                      </div>
+                
+                  </form>
+            </div>
+        </section>
 
+    </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>

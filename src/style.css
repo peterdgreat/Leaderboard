@@ -1,0 +1,35 @@
+.main {
+  border: 3px solid black;
+  box-shadow: 1px 2px  black;
+  margin: 5px 5px 5px 5px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.main li:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.inpt {
+  border: 3px solid black;
+}
+
+button {
+  box-shadow: 5px 5px  black;
+  border: 3px solid black;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+li h4 {
+  padding: 5px;
+}
