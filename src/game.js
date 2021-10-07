@@ -23,6 +23,27 @@ class Game {
     };
     return fetchData();
   }
+
+  static createScore(score) {
+    const fetchData = async () => {
+      const id = await Game.Newgame();
+      const response = await (fetch(`${url}games/${id}/${score}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          user: 'Peterdgreat',
+          score: '100',
+
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }));
+      // eslint-disable-next-line no-return-await
+      const resp = await response.json();
+      return resp;
+    };
+    return fetchData();
+  }
 }
 
 export default Game;
