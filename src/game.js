@@ -24,10 +24,16 @@ class Game {
     return fetchData();
   }
 
+  static localstorage() {
+    const res = async () => localStorage.setItem('score id', await Game.Newgame());
+    return res();
+    // return res.json();
+  }
+
   static createScore(score) {
     const fetchData = async () => {
-      const id = await Game.Newgame();
-      const response = await (fetch(`${url}games/${id}/${score}`, {
+      const id = localStorage.getItem('score id');
+      const response = await (fetch(`${url}games/${id}/${score}/`, {
         method: 'POST',
         body: JSON.stringify({
           user: 'Peterdgreat',

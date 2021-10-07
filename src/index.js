@@ -19,10 +19,12 @@ const gameDom = () => {
 };
 refresh.addEventListener('click', () => {
   Game.Newgame().then((data) => console.log(data));
+  Game.localstorage().then((data) => console.log(data));
 });
 
 window.onload = () => {
   Game.Newgame().then((data) => console.log(data));
+  Game.localstorage().then((data) => console.log(data));
 };
 
 submit.addEventListener('click', (e) => {
