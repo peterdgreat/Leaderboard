@@ -1,6 +1,11 @@
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
-const dataArray = [];
+
 class Game {
+  constructor(score, user) {
+    this.score = score;
+    this.user = user;
+  }
+
   static Newgame() {
     const fetchData = async () => {
       const response = await (fetch(`${url}games`, {
@@ -24,14 +29,15 @@ class Game {
     return fetchData();
   }
 
-  static localstorage() {
-  //   const idD = Game.Newgame().then((data) => data);
-  //  let id = JSON.parse(idD)
-  //    return localStorage.setItem('id', id );
+  static createLocal() {
+    // set local storage for new game
+    return Game.Newgame().then((id) => {
+      localStorage.setItem('gameId', id);
+    });
   }
 
   static createScore(name, uscore) {
-    const idB = 'e6ixqUxWItvZD1HIbny3';
+    const idB = localStorage.getItem('gameId');
     const fetchData = async () => {
       const response = await (fetch(`${url}games/${idB}/scores`, {
         method: 'POST',
@@ -45,28 +51,27 @@ class Game {
           'Content-type': 'application/json; charset=UTF-8',
         },
       }));
-      // eslint-disable-next-line no-return-await
+        // eslint-disable-next-line no-return-await
       const resp = await response.json();
-
-      console.log(resp);
-      console.log(idB);
+      return resp;
     };
     return fetchData();
   }
 
   static getScore() {
     const fetchData = async () => {
-      const idB = 'e6ixqUxWItvZD1HIbny3';
+      const idB = localStorage.getItem('gameId');
       const response = await fetch(`${url}games/${idB}/scores`);
       const resp = await response.json();
-      dataArray.push(resp.result);
-      console.log(dataArray);
-      return dataArray;
+      return resp.result;
     };
     return fetchData();
   }
+
+  static refresh() {
+    // remove all users from the array
+    Game.createLocal();
+  }
 }
-// const id = Game.Newgame().then((data) => data);
-// console.log(id);
 
 export default Game;

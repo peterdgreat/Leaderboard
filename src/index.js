@@ -18,25 +18,21 @@ const gameDom = (namev, scorev) => {
   list.appendChild(li);
 };
 refresh.addEventListener('click', () => {
+  list.innerHTML = '';
+  Game.refresh();
 });
 
 window.onload = () => {
   const data = Game.getScore();
   return data.then((datum) => {
-    datum.forEach((datums) => {
-      datums.forEach((el) => {
-        gameDom(el.user, el.score);
-      });
+    datum.forEach((item) => {
+      gameDom(item.user, item.score);
     });
   });
 };
 
 submit.addEventListener('click', (e) => {
-  // Game.localstorage();
   gameDom(nameD.value, scoreD.value);
-  Game.createScore(nameD.value, scoreD.value).then((data) => {
-    console.log(data);
-  });
-  // Game.createScore(nameD.value, scoreD.value);
+  Game.createScore(nameD.value, scoreD.value).then((data) => data);
   e.preventDefault();
 });
