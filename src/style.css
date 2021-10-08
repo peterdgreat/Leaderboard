@@ -52,5 +52,5 @@ li h4 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
