@@ -3,7 +3,7 @@
 
 > This is a Leaderboard list app, using webpack and ES6 features
 
-
+![screenshot](/img/leaderboard.png)
 ## Built With
 
 - HTML5
