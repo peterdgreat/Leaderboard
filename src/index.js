@@ -11,10 +11,20 @@ const gameDom = (namev, scorev) => {
   const li = document.createElement('li');
   const name = document.createElement('h4');
   const score = document.createElement('h4');
+  const div = document.createElement('div');
+  const star = document.createElement('span');
+  div.classList.add('d-flex', 'justify-content-end', 'width');
+  star.classList.add('material-icons');
+  star.innerText = 'auto_awesome';
+  div.appendChild(score);
   name.innerHTML = namev;
   score.innerHTML = scorev;
+  li.appendChild(star);
   li.appendChild(name);
-  li.appendChild(score);
+  star.classList.add('mx-2');
+  name.classList.add('mx-2');
+  li.appendChild(div);
+  li.classList.add('d-flex', 'justify-content-start');
   list.appendChild(li);
 };
 refresh.addEventListener('click', () => {
