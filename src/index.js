@@ -18,8 +18,7 @@ const gameDom = (namev, scorev) => {
   list.appendChild(li);
 };
 refresh.addEventListener('click', () => {
-  list.innerHTML = '';
-  Game.refresh();
+  window.location.reload(true);
 });
 
 window.onload = () => {

@@ -67,11 +67,6 @@ class Game {
     };
     return fetchData();
   }
-
-  static refresh() {
-    // remove all users from the array
-    Game.createLocal();
-  }
 }
 
 export default Game;
