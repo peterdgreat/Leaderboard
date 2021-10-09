@@ -1,6 +1,7 @@
 import './style.css';
 import Game from './game';
-import validation from './validation';
+import Validation from './validation';
+// import { msg } from './validation';
 
 const refresh = document.querySelector('.refresh');
 const nameD = document.querySelector('.name');
@@ -8,6 +9,8 @@ const scoreD = document.querySelector('.score');
 const submit = document.querySelector('.submit');
 const list = document.querySelector('.list');
 const spin = document.querySelector('.spin');
+const validateSubmission = new Validation();
+const msgs = document.querySelector('.msgs');
 
 const gameDom = (namev, scorev) => {
   const li = document.createElement('li');
@@ -54,8 +57,17 @@ window.onload = () => {
 };
 
 submit.addEventListener('click', (e) => {
-  validation(nameD.value, scoreD.value);
-  gameDom(nameD.value, scoreD.value);
-  Game.createScore(nameD.value, scoreD.value).then((data) => data);
+  validateSubmission.validate(nameD.value, scoreD.value);
+  if (validateSubmission.validate(nameD.value, scoreD.value)) {
+    msgs.classList.add('d-none');
+    Game.createScore(nameD.value, scoreD.value);
+    gameDom(nameD.value, scoreD.value);
+    nameD.value = '';
+    scoreD.value = '';
+  } else {
+    msgs.innerText = validateSubmission.msg;
+    msgs.classList.remove('d-none');
+    msgs.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'text-danger');
+  }
   e.preventDefault();
 });
