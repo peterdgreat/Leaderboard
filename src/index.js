@@ -14,17 +14,20 @@ const gameDom = (namev, scorev) => {
   const score = document.createElement('h4');
   const div = document.createElement('div');
   const star = document.createElement('span');
+  const div2 = document.createElement('div');
   star.classList.add('material-icons');
   star.innerText = 'auto_awesome';
-  div.appendChild(score);
+  div.appendChild(name);
   name.innerHTML = namev;
   score.innerHTML = scorev;
   li.appendChild(star);
-  li.appendChild(name);
-  star.classList.add('mx-2');
-  name.classList.add('mx-2');
+  div2.appendChild(score);
+  div2.classList.add('d-flex', 'justify-content-end', 'col-2', 'pe-2');
+  star.classList.add('ms-2');
+  div.classList.add('col-9', 'd-flex', 'justify-content-start', 'align-items-center', 'ms-3');
   li.appendChild(div);
-  li.classList.add('d-flex', 'justify-content-between', 'text-center');
+  li.appendChild(div2);
+  li.classList.add('d-flex', 'align-items-center');
   list.appendChild(li);
 };
 
@@ -37,10 +40,11 @@ refresh.addEventListener('click', () => {
 });
 
 window.onload = () => {
-  // setTimeout(() => {
-  //   stopspinner();
-  // }, 10000);
-  stopspinner();
+  setTimeout(() => {
+    stopspinner();
+    list.classList.remove('d-none');
+  }, 1000);
+  // stopspinner();
   const data = Game.getScore();
   return data.then((datum) => {
     datum.forEach((item) => {

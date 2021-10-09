@@ -8,18 +8,13 @@ body {
   margin: 5px 5px 5px 5px;
 }
 
-li {
-  display: flex;
-  align-items: center;
-}
-
 span {
   color: #ff2e00;
 }
 
 .spinner-m {
-  width: 3rem;
-  height: 3rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 .inpt {
