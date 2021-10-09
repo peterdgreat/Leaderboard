@@ -11,8 +11,8 @@ export default class Validation {
     } else if (name.length > 20 || name.length < 3) {
       this.msg = 'Name must be between 3 and 20 characters';
       val = false;
-    } else if (score > 5000 || score < 0) {
-      this.msg = 'Score must be between 0 and 5000';
+    } else if (score > 100 || score < 0) {
+      this.msg = 'Score must be between 0 and 100';
       val = false;
     }
     return val;
