@@ -28,6 +28,16 @@
             <button class="refresh">Refresh</button>
            </div>
            <div class="main mt-5">
+               <section class=" text-center spin">
+
+             
+            <div class="spinner-border  spinner-m"  role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow "  role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </section>
             <ul class="list-unstyled list">
      </ul>
         </div>
@@ -38,10 +48,10 @@
       
                 <form class="mt-5 form"> 
                     <div class="mb-3 inpt ">
-                      <input type="text" class="name"  placeholder="Your name">
+                      <input minlength="3" maxlength="15"  type="text" class="name"  placeholder="Your name">
                     </div>
                     <div class="mb-3 inpt ">
-                        <input type="number" class="score" placeholder="Your score">
+                        <input min="1" max="5000" type="number" class="score" placeholder="Your score">
                       </div>
                       <div class="d-flex col-12 justify-content-end">
                         <button type="submit" class="submit" >Submit</button>

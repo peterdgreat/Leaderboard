@@ -6,6 +6,7 @@ const nameD = document.querySelector('.name');
 const scoreD = document.querySelector('.score');
 const submit = document.querySelector('.submit');
 const list = document.querySelector('.list');
+const spin = document.querySelector('.spin');
 
 const gameDom = (namev, scorev) => {
   const li = document.createElement('li');
@@ -13,7 +14,6 @@ const gameDom = (namev, scorev) => {
   const score = document.createElement('h4');
   const div = document.createElement('div');
   const star = document.createElement('span');
-  div.classList.add('d-flex', 'justify-content-end', 'width');
   star.classList.add('material-icons');
   star.innerText = 'auto_awesome';
   div.appendChild(score);
@@ -24,14 +24,23 @@ const gameDom = (namev, scorev) => {
   star.classList.add('mx-2');
   name.classList.add('mx-2');
   li.appendChild(div);
-  li.classList.add('d-flex', 'justify-content-start');
+  li.classList.add('d-flex', 'justify-content-between', 'text-center');
   list.appendChild(li);
 };
+
+const stopspinner = () => {
+  spin.classList.add('d-none');
+};
+
 refresh.addEventListener('click', () => {
   window.location.reload(true);
 });
 
 window.onload = () => {
+  // setTimeout(() => {
+  //   stopspinner();
+  // }, 10000);
+  stopspinner();
   const data = Game.getScore();
   return data.then((datum) => {
     datum.forEach((item) => {
