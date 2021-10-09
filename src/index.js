@@ -1,5 +1,6 @@
 import './style.css';
 import Game from './game';
+import validation from './validation';
 
 const refresh = document.querySelector('.refresh');
 const nameD = document.querySelector('.name');
@@ -44,7 +45,6 @@ window.onload = () => {
     stopspinner();
     list.classList.remove('d-none');
   }, 1000);
-  // stopspinner();
   const data = Game.getScore();
   return data.then((datum) => {
     datum.forEach((item) => {
@@ -54,6 +54,7 @@ window.onload = () => {
 };
 
 submit.addEventListener('click', (e) => {
+  validation(nameD.value, scoreD.value);
   gameDom(nameD.value, scoreD.value);
   Game.createScore(nameD.value, scoreD.value).then((data) => data);
   e.preventDefault();
