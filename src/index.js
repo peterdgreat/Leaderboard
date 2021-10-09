@@ -52,7 +52,7 @@ window.onload = () => {
   const data = Game.getScore();
   return data.then((datum) => {
     datum.forEach((item) => {
-      gameDom(item.name, item.score);
+      gameDom(item.user, item.score);
     });
   });
 };
