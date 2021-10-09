@@ -8,17 +8,13 @@ body {
   margin: 5px 5px 5px 5px;
 }
 
-li {
-  display: flex;
-  align-items: center;
-}
-
 span {
   color: #ff2e00;
 }
 
-.main li:nth-child(odd) {
-  background-color: #5448c8;
+.spinner-m {
+  width: 10rem;
+  height: 10rem;
 }
 
 .inpt {
@@ -31,11 +27,9 @@ button {
   color: #fff;
 }
 
-form {
-  width: 100%;
-}
-
-input {
+form,
+input,
+li {
   width: 100%;
 }
 
@@ -43,9 +37,13 @@ li h4 {
   padding: 5px;
 }
 
-.width {
-  width: 50%;
+.main li:nth-child(odd) {
+  background-color: #5448c8;
 }
+
+/* .width {
+  width: 50%;
+} */
 
 .wrapper {
   display: flex;
