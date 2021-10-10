@@ -10,7 +10,14 @@
     <title>Leaderboard </title>
 </head>
 <body>
-    <header class="mt-5">
+  <div class="toast d-none d-flex justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+  
+    <div class="toast-body">
+  
+    </div>
+  </div>
+   
+  <header class="mt-5">
         <h1 class="text-center">Leaderboard</h1>
     </header>
     <div class="wrapper">
@@ -51,7 +58,7 @@
                       <input minlength="3" maxlength="20"  type="text" class="name"  placeholder="Your name">
                     </div>
                     <div class="mb-3 inpt ">
-                        <input min="1" max="5000" type="number" class="score" placeholder="Your score">
+                        <input min="1" max="100" type="number" class="score" placeholder="Your score">
                       </div>
                       <div class="d-flex col-12 justify-content-end">
                         <button type="submit" class="submit" >Submit</button>

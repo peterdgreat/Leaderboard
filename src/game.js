@@ -53,7 +53,8 @@ class Game {
       }));
         // eslint-disable-next-line no-return-await
       const resp = await response.json();
-      return resp;
+      const sorted = resp.result.sort((a, b) => b.score - a.score);
+      return sorted;
     };
     return fetchData();
   }
@@ -63,7 +64,10 @@ class Game {
       const idB = localStorage.getItem('gameId');
       const response = await fetch(`${url}games/${idB}/scores`);
       const resp = await response.json();
-      return resp.result;
+
+      // result with highest score first
+      const sorted = resp.result.sort((a, b) => b.score - a.score);
+      return sorted;
     };
     return fetchData();
   }

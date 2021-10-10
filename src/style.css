@@ -41,9 +41,18 @@ li h4 {
   background-color: #5448c8;
 }
 
-/* .width {
-  width: 50%;
-} */
+.toast {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  height: 5rem;
+  background-color: #5448c8;
+  z-index: 99999;
+}
+
+.toast:not(.show) {
+  display: block;
+}
 
 .wrapper {
   display: flex;

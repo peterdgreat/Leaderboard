@@ -1,7 +1,7 @@
 import './style.css';
 import Game from './game';
 import Validation from './validation';
-// import { msg } from './validation';
+import toastr from './toastr';
 
 const refresh = document.querySelector('.refresh');
 const nameD = document.querySelector('.name');
@@ -11,6 +11,7 @@ const list = document.querySelector('.list');
 const spin = document.querySelector('.spin');
 const validateSubmission = new Validation();
 const msgs = document.querySelector('.msgs');
+const toast = document.querySelector('.toast');
 
 const gameDom = (namev, scorev) => {
   const li = document.createElement('li');
@@ -62,8 +63,13 @@ submit.addEventListener('click', (e) => {
     msgs.classList.add('d-none');
     Game.createScore(nameD.value, scoreD.value);
     gameDom(nameD.value, scoreD.value);
+    toast.classList.remove('d-none');
+    toast.innerHTML = toastr(nameD.value, scoreD.value);
     nameD.value = '';
     scoreD.value = '';
+    setTimeout(() => {
+      toast.classList.add('d-none');
+    }, 3000);
   } else {
     msgs.innerText = validateSubmission.msg;
     msgs.classList.remove('d-none');
