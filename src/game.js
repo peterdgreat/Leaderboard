@@ -32,12 +32,12 @@ class Game {
   static createLocal() {
     // set local storage for new game
     return Game.Newgame().then((id) => {
-      localStorage.setItem('gameId', id);
+      localStorage.setItem('GameId', id);
     });
   }
 
   static createScore(name, uscore) {
-    const idB = localStorage.getItem('gameId');
+    const idB = 'sNjCKMKMdLRwidAUj6zn';
     const fetchData = async () => {
       const response = await (fetch(`${url}games/${idB}/scores`, {
         method: 'POST',
@@ -61,7 +61,7 @@ class Game {
 
   static getScore() {
     const fetchData = async () => {
-      const idB = localStorage.getItem('gameId');
+      const idB = 'sNjCKMKMdLRwidAUj6zn';
       const response = await fetch(`${url}games/${idB}/scores`);
       const resp = await response.json();
 
