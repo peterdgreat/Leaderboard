@@ -1,7 +1,7 @@
 # Leaderboard
 
 
-> This is a Leaderboard list app, using webpack and ES6 features
+> This is a Leaderboard list app, users can add new scores obtained
 
 ![screenshot](/img/leaderboard.png)
 ## Built With
@@ -47,9 +47,9 @@ npm run start
 
 👤 **Ajayi Peter**
 
-- GitHub: [@githubhandle](https://github.com/peterdgreat)
-- Twitter: [@twitterhandle](https://twitter.com/dev_Peter_O)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ajayi-peter-4391ab1b5)
+- GitHub: [@peterdgreat](https://github.com/peterdgreat)
+- Twitter: [@dev_peter_O](https://twitter.com/dev_Peter_O)
+- LinkedIn: [ajayipeter](https://linkedin.com/in/ajayipeter)
 
 ## Show your support
 
